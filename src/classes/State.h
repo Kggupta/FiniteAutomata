@@ -7,11 +7,10 @@ class State {
     const string name;
     bool accepting;
     public:
-    State(string name, bool accept);
-    State(string name);
-    string getName();
-    bool isAccept();
-    bool setAccepting(bool accept);
+    State(string name, bool accept = false);
+    string getName() const;
+    bool isAccept() const;
+    void setAccepting(bool accept);
 };
 
 bool operator< (const State &left, const State &right);
