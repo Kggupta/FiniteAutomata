@@ -5,14 +5,14 @@ using std::string;
 class State;
 
 class Transition {
-    State & src;
+    State * src;
     char read;
-    State & dest;
+    State * dest;
     public:
-    Transition(State & src, char read, State & dest);
-    State & getDestination() const;
+    Transition(State * src, char read, State * dest);
+    State * getDestination() const;
     char getRead() const;
-    State & getSource() const;
+    State * getSource() const;
 };
 
 bool operator== (const Transition &left, const Transition &right);
