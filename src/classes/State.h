@@ -15,4 +15,5 @@ class State {
 
 bool operator< (const State &left, const State &right);
 bool operator== (const State &left, const State &right);
+bool operator== (const State &left, const string &right);
 #endif
