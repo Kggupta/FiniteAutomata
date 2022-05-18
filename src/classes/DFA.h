@@ -2,27 +2,27 @@
 #define __DFA_H
 #include "State.h"
 #include "InvalidState.h"
-#include <array>
-#include <set>
+#include "Transition.h"
 #include <vector>
 using namespace std;
-const int TRANSITION_NUM = 128;
-const int MAX_STATES = 128;
 
 class DFA {
-    set<State> states;
-    array<array<State, TRANSITION_NUM>, MAX_STATES> transitions;
-    State & currentState;
-    State & startState; 
-    State & getDestination(string state, char read);
+    vector<State *> states;
+    vector<Transition *> transitions;
+    State * currentState;
+    State * startState; 
+    bool hasState(string & state);
+    bool hasTransition(string & src, char read);
+    State * getDestination(char read);
+    State * getState(string & name);
     public:
     void addState(string state);
     void setAccept(string state, bool set);
-    void addTransition(string src, string dest, string read);
+    void addTransition(string src, string dest, char read);
     void setStart(string state);
 
-    void isFailed() const;
-    void isAccept() const;
+    bool isFailed() const;
+    bool isAccept() const;
 
     void reset();
 
