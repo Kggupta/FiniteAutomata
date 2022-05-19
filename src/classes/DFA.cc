@@ -17,7 +17,7 @@ bool DFA::hasState(string & name) {
 void DFA::addState(string name) {
     if (hasState(name)) throw InvalidScan("State " + name + " already exists.");
 
-    states.emplace_back(new State(name, false));
+    states.emplace_back(new State(name));
 }
 
 State * DFA::getState(string & name) {
