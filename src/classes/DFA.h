@@ -16,9 +16,10 @@ class DFA {
     State * getDestination(char read);
     State * getState(string & name);
     public:
+    ~DFA();
     void addState(string state);
     void setAccept(string state, bool set);
-    void addTransition(string src, string dest, char read);
+    void addTransition(string src, string dest, string read);
     void setStart(string state);
 
     bool isFailed() const;
