@@ -7,7 +7,8 @@ class State {
     const string name;
     bool accepting;
     public:
-    State(string name, bool accept = false);
+    State(string name, bool accept);
+    State(string name);
     string getName() const;
     bool isAccept() const;
     void setAccepting(bool accept);

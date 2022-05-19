@@ -4,7 +4,7 @@ string State::getName() const {return name;}
 
 bool State::isAccept() const {return accepting;}
 
-State::State(string name, bool accept = false): name(name), accepting(accepting) {}
+State::State(string name, bool accept = false): name(name), accepting(accept) {}
 
 void State::setAccepting(bool accept) {accepting = accept;}
 
